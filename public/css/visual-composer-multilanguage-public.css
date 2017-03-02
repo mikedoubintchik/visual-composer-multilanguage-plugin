@@ -1,0 +1,22 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+/** Language translation **/
+
+.language {
+    display: none;
+}
+
+.language[data-lang=English] {
+    display: block;
+}
+
+.form-control option.language[data-lang=English] {
+    display: block;
+}
+
+#language-selector {
+    float: right;
+}
