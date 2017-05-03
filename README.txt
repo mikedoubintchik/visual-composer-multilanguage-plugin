@@ -2,7 +2,7 @@
 Contributors: allurewebsolutions
 Author URI: https://allurewebsolutions.com
 Plugin URI: https://vc-multilanguage.allureprojects.com/
-Tags: visual composer, multilanguage, multi-language, allure web solutions, javascript
+Tags: visual composer, multilanguage, multi-language, translate, translation
 Donate link: https://allurewebsolutions.com/product/donation
 Requires at least: 3.4
 Tested up to: 4.7.4
