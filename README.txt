@@ -13,9 +13,9 @@ This is an add-on plugin for WPBakery Visual Composer that adds multilanguage su
 == Description ==
 This is an add-on plugin for WPBakery Visual Composer that adds functionality of a language switcher, making it very easy to create a multi-language site without an additional multi-language or translation plugin.
 
-[Demo] (https://vc-multilanguage.allureprojects.com)
+[Demo](https://vc-multilanguage.allureprojects.com)
 
-[Full Setup Instructions] (https://allurewebsolutions.com/visual-composer-multilanguage-plugin)
+[Full Setup Instructions](https://allurewebsolutions.com/visual-composer-multilanguage-plugin)
 
 == Installation ==
 1) Activate the plugin. Must have Visual Composer also activated.
