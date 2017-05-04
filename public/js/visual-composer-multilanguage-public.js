@@ -29,6 +29,27 @@
      * practising this, we should strive to set a better example in our own work.
      */
 
+    /**
+     *
+     * Pseudo selector to check for empty selector
+     *
+     * @param obj
+     * @param index
+     * @param meta
+     * @param stack
+     * @returns {boolean}
+     */
+    $.expr[':'].nocontent = function (obj, index, meta, stack) {
+        // obj - is a current DOM element
+        // index - the current loop index in stack
+        // meta - meta data about your selector
+        // stack - stack of all elements to loop
+
+        // Return true to include current element
+        // Return false to explude current element
+        return !($.trim($(obj).text()).length) && !($(obj).children().length)
+    };
+
     $(function () {
 
         // Add language toggle example
@@ -36,6 +57,13 @@
 
         var $defaultLang = 'English';
         var $languageSelector = $('#language-selector');
+        var emptyTranslations = $('.vc_row.language .wpb_text_column .wpb_wrapper:nocontent');
+        var firstTranslationContent = $('.vc_row.language .wpb_text_column .wpb_wrapper').eq(0).text();
+        var firstTranslationLang = $('.vc_row.language .wpb_text_column .wpb_wrapper').eq(0).closest('.language').attr('data-lang');
+        var pluginSettings = $('#plugin-settings');
+        var googleApiKey = pluginSettings.attr('data-googleapikey');
+        var autoTranslateStatus = (pluginSettings.attr('data-autotranslate') === 'autotranslate');
+        var styling = (pluginSettings.attr('data-styling') === 'styling');
 
         /**
          * Save language to localstorage
@@ -101,6 +129,65 @@
         }
 
         /**
+         * Translate all empty contents
+         */
+        function autoTranslate() {
+            var i, language, currentTranslation, sourceLang;
+            $.when(getLanguageCodes()).then(function (data) {
+                sourceLang = data[firstTranslationLang];
+
+                for (i = 0; i < emptyTranslations.length; i++) {
+                    currentTranslation = emptyTranslations.eq(i);
+                    language = currentTranslation.closest('.language').attr('data-lang');
+
+                    $.when(translateContent(sourceLang, data[language]), currentTranslation).then(function (resp, currentTranslation) {
+                        currentTranslation.text(resp[0].data.translations[0].translatedText);
+                    });
+                }
+
+            });
+        }
+
+        /**
+         *
+         * Translate content with Google Cloud Translate API
+         *
+         * @param language
+         * @returns {*}
+         */
+        function translateContent(sourceLang, targetLang, dataToKeep) {
+            var df = $.Deferred();
+            var url = "https://www.googleapis.com/language/translate/v2/?key=" + googleApiKey;
+            url += "&q=" + encodeURI(firstTranslationContent);
+
+            url += "&target=" + targetLang;
+            url += "&source=" + sourceLang;
+
+            $.ajax({
+                url: url,
+                type: "GET",
+                data: "",
+                dataType: "json",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                }
+            }).done(function (resp) {
+                df.resolve(resp, dataToKeep);
+            });
+
+            return df.promise();
+        }
+
+        /**
+         * Convert country name to country code
+         * @returns {*}
+         */
+        function getLanguageCodes() {
+            return $.getJSON("https://api.myjson.com/bins/v1mod");
+        }
+
+        /**
          * Bind the UI events
          */
         function bindEvents() {
@@ -112,6 +199,16 @@
         // Initialize
         bindEvents();
         toggleLanguageSelector();
+
+        // If styling is turned on, add a class to the body
+        if (styling) {
+            $('body').addClass('multilanguage-styling');
+        }
+
+        // If auto translate is turned on, initiate translation
+        if (autoTranslateStatus) {
+            autoTranslate();
+        }
 
     });
 

@@ -130,6 +130,9 @@ class Visual_Composer_Multilanguage_Public
         vc_set_shortcodes_templates_dir($dir);
     }
 
+    /**
+     * Add language switcher
+     */
     public function add_language_switcher()
     {
         if (get_option('visual_composer_multilanguage_switcher') === "switcher") {
@@ -143,6 +146,14 @@ class Visual_Composer_Multilanguage_Public
             echo $switcher_html;
 
         }
+    }
+
+    function plugin_settings_passthrough()
+    {
+        $googleapikey = get_option('visual_composer_multilanguage_googleapikey');
+        $styling = get_option('visual_composer_multilanguage_styling');
+        $autotranslate = get_option('visual_composer_multilanguage_autotranslate');
+        echo '<div id="plugin-settings" style="display:none;" data-googleapikey="' . $googleapikey . '" data-styling="' . $styling . '" data-autotranslate="' . $autotranslate . '"></div>';
     }
 
 }

@@ -69,7 +69,7 @@ class Visual_Composer_Multilanguage {
 	public function __construct() {
 
 		$this->plugin_name = 'visual-composer-multilanguage';
-		$this->version = '1.0.1';
+		$this->version = '2.0';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -176,6 +176,7 @@ class Visual_Composer_Multilanguage {
 
         $this->loader->add_action( 'wp_loaded', $plugin_public, 'extend_visual_composer' );
         $this->loader->add_action( 'wp_footer', $plugin_public, 'add_language_switcher' );
+        $this->loader->add_action( 'wp_footer', $plugin_public, 'plugin_settings_passthrough' );
 
 	}
 

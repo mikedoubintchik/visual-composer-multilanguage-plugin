@@ -4,19 +4,18 @@
  */
 
 /** Language translation **/
-
-.language {
+.multilanguage-styling .language {
     display: none;
 }
 
-.language[data-lang=English] {
+.multilanguage-styling .language[data-lang=English] {
     display: block;
 }
 
-.form-control option.language[data-lang=English] {
+.multilanguage-styling .form-control option.language[data-lang=English] {
     display: block;
 }
 
-#language-selector {
+.multilanguage-styling #language-selector {
     float: right;
 }

@@ -165,8 +165,43 @@ class Visual_Composer_Multilanguage_Admin
             array('label_for' => $this->option_name . '_switcher')
         );
 
+        // Activate automatic translations
+        add_settings_field(
+            $this->option_name . '_autotranslate',
+            __('Activate Automatic Translations', 'visual-composer-multilanguage'),
+            array($this, $this->option_name . '_autotranslate_cb'),
+            $this->plugin_name,
+            $this->option_name . '_general',
+            array('label_for' => $this->option_name . '_autotranslate')
+        );
+
+        // Activate styling
+        add_settings_field(
+            $this->option_name . '_styling',
+            __('Activate Styling', 'visual-composer-multilanguage'),
+            array($this, $this->option_name . '_styling_cb'),
+            $this->plugin_name,
+            $this->option_name . '_general',
+            array('label_for' => $this->option_name . '_styling')
+        );
+
+        // Google API Key
+        add_settings_field(
+            $this->option_name . '_googleapikey',
+            __('Google Cloud Translate API Key', 'visual-composer-multilanguage'),
+            array($this, $this->option_name . '_googleapikey_cb'),
+            $this->plugin_name,
+            $this->option_name . '_general',
+            array('label_for' => $this->option_name . '_googleapikey')
+        );
+
         register_setting($this->plugin_name, $this->option_name . '_languages', array($this, $this->option_name . '_sanitize_languages'));
         register_setting($this->plugin_name, $this->option_name . '_switcher', array($this, $this->option_name . '_sanitize_switcher'));
+        register_setting($this->plugin_name, $this->option_name . '_autotranslate', array($this, $this->option_name . '_sanitize_autotranslate'));
+        register_setting($this->plugin_name, $this->option_name . '_styling', array($this, $this->option_name . '_sanitize_styling'));
+        register_setting($this->plugin_name, $this->option_name . '_googleapikey', array($this, $this->option_name . '_googleapikey_styling'));
+
+
     }
 
     /**
@@ -202,6 +237,62 @@ class Visual_Composer_Multilanguage_Admin
                        id="<?php echo $this->option_name . '_switcher' ?>"
                        value="switcher" <?php checked($switcher, 'switcher'); ?>
             </label>
+        </fieldset>
+        <?php
+    }
+
+    /**
+     * Render the checkbox for auto translations
+     *
+     * @since  1.0.0
+     */
+    public function visual_composer_multilanguage_autotranslate_cb()
+    {
+        $autotranslate = get_option($this->option_name . '_autotranslate');
+        ?>
+        <fieldset>
+            <label>
+                <input type="checkbox" name="<?php echo $this->option_name . '_autotranslate' ?>"
+                       id="<?php echo $this->option_name . '_autotranslate' ?>"
+                       value="autotranslate" <?php checked($autotranslate, 'autotranslate'); ?>
+            </label>
+        </fieldset>
+        <?php
+    }
+
+    /**
+     * Render the checkbox for styling
+     *
+     * @since  1.0.0
+     */
+    public function visual_composer_multilanguage_styling_cb()
+    {
+        $styling = get_option($this->option_name . '_styling');
+        ?>
+        <fieldset>
+            <label>
+                <input type="checkbox" name="<?php echo $this->option_name . '_styling' ?>"
+                       id="<?php echo $this->option_name . '_styling' ?>"
+                       value="styling" <?php checked($styling, 'styling'); ?>
+            </label>
+        </fieldset>
+        <?php
+    }
+
+    /**
+     * Render the text input for Google API Key
+     *
+     * @since  1.0.0
+     */
+    public function visual_composer_multilanguage_googleapikey_cb()
+    {
+        $googleapikey = get_option($this->option_name . '_googleapikey');
+        ?>
+        <fieldset>
+            <input type="text" name="<?php echo $this->option_name . '_googleapikey' ?>"
+                   id="<?php echo $this->option_name . '_googleapikey' ?>"
+                   value="<?php echo get_option($this->option_name . '_googleapikey') ?>"
+                   placeholder="<?php _e('API KEY', 'visual-composer-multilanguage'); ?>"/>
         </fieldset>
         <?php
     }
