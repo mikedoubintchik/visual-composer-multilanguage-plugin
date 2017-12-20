@@ -5,7 +5,7 @@ Plugin URI: https://vc-multilanguage.allureprojects.com/
 Tags: visual composer, multilanguage, multi-language, translate, translation
 Donate link: https://allurewebsolutions.com/product/donation
 Requires at least: 3.0.1
-Tested up to: 4.8
+Tested up to: 4.9.1
 Stable tag: 2.0
 
 This is an add-on plugin for WPBakery Visual Composer that adds multilanguage support and functionality. Version 2.0 now also has automatic translations that you can turn on.
