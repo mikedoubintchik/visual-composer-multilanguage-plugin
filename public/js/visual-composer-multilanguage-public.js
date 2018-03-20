@@ -55,7 +55,7 @@
         // Add language toggle example
         // $('body').append('<p id="language-selector"><strong>Change Language To: </strong><a href="#" class="js-lang-option" data-lang-val="English">English</a><a href="#" class="js-lang-option" data-lang-val="Russian">Russian</a><a href="#" class="js-lang-option" data-lang-val="Portuguese">Portuguese</a></p>');
 
-        var $defaultLang = 'English';
+        var $defaultLang = vc.defaultLanguage ? vc.defaultLanguage : 'English';
         var $languageSelector = $('#language-selector');
         var emptyTranslations = $('.vc_row.language .wpb_text_column .wpb_wrapper:nocontent');
         var firstTranslationContent = $('.vc_row.language .wpb_text_column .wpb_wrapper').eq(0).text();

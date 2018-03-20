@@ -30,7 +30,14 @@ class Visual_Composer_Multilanguage_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
+		if ( ! function_exists( 'vc_add_param' ) ) {
+			// Deactivate the plugin
+			deactivate_plugins( __FILE__ );
 
+			// Throw an error in the wordpress admin console
+			$error_message = __( 'This plugin requires <a href="https://codecanyon.net/item/visual-composer-page-builder-for-wordpress/242431">WPBakery Page Builder</a> plugin to be active!', 'woocommerce' );
+			die( $error_message );
+		}
 	}
 
 }
