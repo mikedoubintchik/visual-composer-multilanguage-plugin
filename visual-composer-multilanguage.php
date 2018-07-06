@@ -16,7 +16,7 @@
  * Plugin Name:       Visual Composer Multilanguage
  * Plugin URI:        https://allurewebsolutions.com/projects/visual-composer-multilanguage
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           2.1
+ * Version:           2.1.1
  * Author:            Allure Web Solutions
  * Author URI:        https://allurewebsolutions.com
  * License:           GPL-2.0+
