@@ -6,8 +6,8 @@
  * @link       https://allurewebsolutions.com
  * @since      1.0.0
  *
- * @package    Visual_Composer_Multilanguage
- * @subpackage Visual_Composer_Multilanguage/admin
+ * @package    Wpbakery_Page_Builder_Multilanguage
+ * @subpackage Wpbakery_Page_Builder_Multilanguage/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Visual_Composer_Multilanguage
- * @subpackage Visual_Composer_Multilanguage/admin
+ * @package    Wpbakery_Page_Builder_Multilanguage
+ * @subpackage Wpbakery_Page_Builder_Multilanguage/admin
  * @author     Allure Web Solutions <info@allurewebsolutions.com>
  */
-class Visual_Composer_Multilanguage_Admin {
+class Wpbakery_Page_Builder_Multilanguage_Admin {
 
 	/**
 	 * The options name to be used in this plugin
@@ -29,7 +29,7 @@ class Visual_Composer_Multilanguage_Admin {
 	 * @access    private
 	 * @var    string $option_name Option name of this plugin
 	 */
-	private $option_name = 'visual_composer_multilanguage';
+	private $option_name = 'wpbakery_page_builder_multilanguage';
 
 	/**
 	 * The ID of this plugin.
@@ -75,15 +75,15 @@ class Visual_Composer_Multilanguage_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Visual_Composer_Multilanguage_Loader as all of the hooks are defined
+		 * defined in Wpbakery_Page_Builder_Multilanguage_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Visual_Composer_Multilanguage_Loader will then create the relationship
+		 * The Wpbakery_Page_Builder_Multilanguage_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/visual-composer-multilanguage-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wpbakery-page-builder-multilanguage-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -98,15 +98,15 @@ class Visual_Composer_Multilanguage_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Visual_Composer_Multilanguage_Loader as all of the hooks are defined
+		 * defined in Wpbakery_Page_Builder_Multilanguage_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Visual_Composer_Multilanguage_Loader will then create the relationship
+		 * The Wpbakery_Page_Builder_Multilanguage_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/visual-composer-multilanguage-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wpbakery-page-builder-multilanguage-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
@@ -118,8 +118,8 @@ class Visual_Composer_Multilanguage_Admin {
 	public function add_options_page() {
 
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'VC Multilanguage Settings', 'visual-composer-multilanguage' ),
-			__( 'VC Multilanguage', 'visual-composer-multilanguage' ),
+			__( 'VC Multilanguage Settings', 'wpbakery-page-builder-multilanguage' ),
+			__( 'VC Multilanguage', 'wpbakery-page-builder-multilanguage' ),
 			'manage_options',
 			$this->plugin_name,
 			array( $this, 'display_options_page' )
@@ -135,7 +135,7 @@ class Visual_Composer_Multilanguage_Admin {
 	public function register_setting() {
 		add_settings_section(
 			$this->option_name . '_general',
-			__( 'General', 'visual-composer-multilanguage' ),
+			__( 'General', 'wpbakery-page-builder-multilanguage' ),
 			array( $this, $this->option_name . '_general_cb' ),
 			$this->plugin_name
 		);
@@ -143,7 +143,7 @@ class Visual_Composer_Multilanguage_Admin {
 		// Supported languages text field
 		add_settings_field(
 			$this->option_name . '_languages',
-			__( 'Languages', 'visual-composer-multilanguage' ),
+			__( 'Languages', 'wpbakery-page-builder-multilanguage' ),
 			array( $this, $this->option_name . '_languages_cb' ),
 			$this->plugin_name,
 			$this->option_name . '_general',
@@ -153,7 +153,7 @@ class Visual_Composer_Multilanguage_Admin {
 		// Supported languages text field
 		add_settings_field(
 			$this->option_name . '_default_language',
-			__( 'Select Default Language', 'visual-composer-multilanguage' ),
+			__( 'Select Default Language', 'wpbakery-page-builder-multilanguage' ),
 			array( $this, $this->option_name . '_default_language_cb' ),
 			$this->plugin_name,
 			$this->option_name . '_general',
@@ -163,7 +163,7 @@ class Visual_Composer_Multilanguage_Admin {
 		// Activate language switcher
 		add_settings_field(
 			$this->option_name . '_switcher',
-			__( 'Activate Language Switcher', 'visual-composer-multilanguage' ),
+			__( 'Activate Language Switcher', 'wpbakery-page-builder-multilanguage' ),
 			array( $this, $this->option_name . '_switcher_cb' ),
 			$this->plugin_name,
 			$this->option_name . '_general',
@@ -173,7 +173,7 @@ class Visual_Composer_Multilanguage_Admin {
 		// Activate automatic translations
 		add_settings_field(
 			$this->option_name . '_autotranslate',
-			__( 'Activate Automatic Translations', 'visual-composer-multilanguage' ),
+			__( 'Activate Automatic Translations', 'wpbakery-page-builder-multilanguage' ),
 			array( $this, $this->option_name . '_autotranslate_cb' ),
 			$this->plugin_name,
 			$this->option_name . '_general',
@@ -183,7 +183,7 @@ class Visual_Composer_Multilanguage_Admin {
 		// Activate styling
 		add_settings_field(
 			$this->option_name . '_styling',
-			__( 'Activate Styling', 'visual-composer-multilanguage' ),
+			__( 'Activate Styling', 'wpbakery-page-builder-multilanguage' ),
 			array( $this, $this->option_name . '_styling_cb' ),
 			$this->plugin_name,
 			$this->option_name . '_general',
@@ -193,7 +193,7 @@ class Visual_Composer_Multilanguage_Admin {
 		// Google API Key
 		add_settings_field(
 			$this->option_name . '_googleapikey',
-			__( 'Google Cloud Translate API Key', 'visual-composer-multilanguage' ),
+			__( 'Google Cloud Translate API Key', 'wpbakery-page-builder-multilanguage' ),
 			array( $this, $this->option_name . '_googleapikey_cb' ),
 			$this->plugin_name,
 			$this->option_name . '_general',
@@ -233,14 +233,14 @@ class Visual_Composer_Multilanguage_Admin {
 	 *
 	 * @since  1.0.0
 	 */
-	public function visual_composer_multilanguage_languages_cb() {
+	public function wpbakery_page_builder_multilanguage_languages_cb() {
 		$languages = get_option( $this->option_name . '_languages' );
 		?>
         <fieldset>
             <input type="text" name="<?php echo $this->option_name . '_languages' ?>"
                    id="<?php echo $this->option_name . '_languages' ?>"
                    value="<?php echo get_option( $this->option_name . '_languages' ) ?>"
-                   placeholder="<?php _e( 'English', 'visual-composer-multilanguage' ); ?>"/>
+                   placeholder="<?php _e( 'English', 'wpbakery-page-builder-multilanguage' ); ?>"/>
         </fieldset>
 		<?php
 	}
@@ -250,13 +250,13 @@ class Visual_Composer_Multilanguage_Admin {
 	 *
 	 * @since  1.0.0
 	 */
-	public function visual_composer_multilanguage_default_language_cb() {
+	public function wpbakery_page_builder_multilanguage_default_language_cb() {
 		?>
         <fieldset>
             <input type="text" name="<?php echo $this->option_name . '_default_language' ?>"
                    id="<?php echo $this->option_name . '_default_language' ?>"
                    value="<?php echo get_option( $this->option_name . '_default_language' ) ?>"
-                   placeholder="<?php _e( 'English', 'visual-composer-multilanguage' ); ?>"/>
+                   placeholder="<?php _e( 'English', 'wpbakery-page-builder-multilanguage' ); ?>"/>
         </fieldset>
 		<?php
 	}
@@ -266,7 +266,7 @@ class Visual_Composer_Multilanguage_Admin {
 	 *
 	 * @since  1.0.0
 	 */
-	public function visual_composer_multilanguage_switcher_cb() {
+	public function wpbakery_page_builder_multilanguage_switcher_cb() {
 		$switcher = get_option( $this->option_name . '_switcher' );
 		?>
         <fieldset>
@@ -284,7 +284,7 @@ class Visual_Composer_Multilanguage_Admin {
 	 *
 	 * @since  1.0.0
 	 */
-	public function visual_composer_multilanguage_autotranslate_cb() {
+	public function wpbakery_page_builder_multilanguage_autotranslate_cb() {
 		$autotranslate = get_option( $this->option_name . '_autotranslate' );
 		?>
         <fieldset>
@@ -302,7 +302,7 @@ class Visual_Composer_Multilanguage_Admin {
 	 *
 	 * @since  1.0.0
 	 */
-	public function visual_composer_multilanguage_styling_cb() {
+	public function wpbakery_page_builder_multilanguage_styling_cb() {
 		$styling = get_option( $this->option_name . '_styling' );
 		?>
         <fieldset>
@@ -320,14 +320,14 @@ class Visual_Composer_Multilanguage_Admin {
 	 *
 	 * @since  1.0.0
 	 */
-	public function visual_composer_multilanguage_googleapikey_cb() {
+	public function wpbakery_page_builder_multilanguage_googleapikey_cb() {
 		$googleapikey = get_option( $this->option_name . '_googleapikey' );
 		?>
         <fieldset>
             <input type="text" name="<?php echo $this->option_name . '_googleapikey' ?>"
                    id="<?php echo $this->option_name . '_googleapikey' ?>"
                    value="<?php echo get_option( $this->option_name . '_googleapikey' ) ?>"
-                   placeholder="<?php _e( 'API KEY', 'visual-composer-multilanguage' ); ?>"/>
+                   placeholder="<?php _e( 'API KEY', 'wpbakery-page-builder-multilanguage' ); ?>"/>
         </fieldset>
 		<?php
 	}
@@ -337,8 +337,8 @@ class Visual_Composer_Multilanguage_Admin {
 	 *
 	 * @since  1.0.0
 	 */
-	public function visual_composer_multilanguage_general_cb() {
-		echo '<p>' . __( 'List languages you would like supported, separated by a comma.', 'visual-composer-multilanguage' ) . '</p>';
+	public function wpbakery_page_builder_multilanguage_general_cb() {
+		echo '<p>' . __( 'List languages you would like supported, separated by a comma.', 'wpbakery-page-builder-multilanguage' ) . '</p>';
 	}
 
 	/**
@@ -347,7 +347,7 @@ class Visual_Composer_Multilanguage_Admin {
 	 * @since  1.0.0
 	 */
 	public function display_options_page() {
-		include_once 'partials/visual-composer-multilanguage-admin-display.php';
+		include_once 'partials/wpbakery-page-builder-multilanguage-admin-display.php';
 	}
 
 }

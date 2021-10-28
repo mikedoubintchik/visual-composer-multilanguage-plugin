@@ -6,8 +6,8 @@
  * @link       https://allurewebsolutions.com
  * @since      1.0.0
  *
- * @package    Visual_Composer_Multilanguage
- * @subpackage Visual_Composer_Multilanguage/includes
+ * @package    Wpbakery_Page_Builder_Multilanguage
+ * @subpackage Wpbakery_Page_Builder_Multilanguage/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Visual_Composer_Multilanguage
- * @subpackage Visual_Composer_Multilanguage/includes
+ * @package    Wpbakery_Page_Builder_Multilanguage
+ * @subpackage Wpbakery_Page_Builder_Multilanguage/includes
  * @author     Allure Web Solutions <info@allurewebsolutions.com>
  */
-class Visual_Composer_Multilanguage_Loader {
+class Wpbakery_Page_Builder_Multilanguage_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.
