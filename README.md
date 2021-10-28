@@ -1,7 +1,7 @@
 # WP Bakery Multilanguage
 
 Author URI: https://allurewebsolutions.com
-Plugin URI: https://vc-multilanguage.allureprojects.com/
+Plugin URI: https://wpb-multilanguage.allureprojects.com/
 Tags: wpbakery page builder, multilanguage, multi-language, translate, translation
 Donate link: https://allurewebsolutions.com/product/donation
 Tested up to: 5.3
