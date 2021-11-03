@@ -16,7 +16,7 @@
  * Plugin Name:       WP Bakery Multilanguage
  * Plugin URI:        https://allurewebsolutions.com/projects/wpbakery-page-builder-multilanguage
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           2.1.2
+ * Version:           3.0.0
  * Author:            Allure Web Solutions
  * Author URI:        https://allurewebsolutions.com
  * License:           GPL-2.0+

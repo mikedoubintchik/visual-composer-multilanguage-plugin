@@ -4,8 +4,8 @@ Author URI: https://allurewebsolutions.com
 Plugin URI: https://wpb-multilanguage.allureprojects.com/
 Tags: wpbakery page builder, multilanguage, multi-language, translate, translation
 Donate link: https://allurewebsolutions.com/product/donation
-Tested up to: 5.3
-Stable tag: 2.1.2
+Tested up to: 5.8.1
+Stable tag: 3.0.0
 
 This is an add-on plugin for WPBakery Page Builder that adds multilanguage support and functionality. Version 2.0 now also has automatic translations that you can turn on.
 
