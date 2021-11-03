@@ -22,7 +22,7 @@
  * @link       https://allurewebsolutions.com
  * @since      1.0.0
  *
- * @package    Visual_Composer_Multilanguage
+ * @package    Wpbakery_Page_Builder_Multilanguage
  */
 
 // If uninstall not called from WordPress, then exit.

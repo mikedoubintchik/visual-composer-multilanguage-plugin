@@ -10,18 +10,18 @@
  *
  * @link              https://allurewebsolutions.com
  * @since             1.0.0
- * @package           Visual_Composer_Multilanguage
+ * @package           Wpbakery_Page_Builder_Multilanguage
  *
  * @wordpress-plugin
  * Plugin Name:       WP Bakery Multilanguage
- * Plugin URI:        https://allurewebsolutions.com/projects/visual-composer-multilanguage
+ * Plugin URI:        https://allurewebsolutions.com/projects/wpbakery-page-builder-multilanguage
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           2.1.2
+ * Version:           3.0.0
  * Author:            Allure Web Solutions
  * Author URI:        https://allurewebsolutions.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       visual-composer-multilanguage
+ * Text Domain:       wpbakery-page-builder-multilanguage
  * Domain Path:       /languages
  */
 
@@ -32,32 +32,32 @@ if (!defined('WPINC')) {
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-visual-composer-multilanguage-activator.php
+ * This action is documented in includes/class-wpbakery-page-builder-multilanguage-activator.php
  */
-function activate_visual_composer_multilanguage()
+function activate_wpbakery_page_builder_multilanguage()
 {
-	require_once plugin_dir_path(__FILE__) . 'includes/class-visual-composer-multilanguage-activator.php';
-	Visual_Composer_Multilanguage_Activator::activate();
+	require_once plugin_dir_path(__FILE__) . 'includes/class-wpbakery-page-builder-multilanguage-activator.php';
+	Wpbakery_Page_Builder_Multilanguage_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-visual-composer-multilanguage-deactivator.php
+ * This action is documented in includes/class-wpbakery-page-builder-multilanguage-deactivator.php
  */
-function deactivate_visual_composer_multilanguage()
+function deactivate_wpbakery_page_builder_multilanguage()
 {
-	require_once plugin_dir_path(__FILE__) . 'includes/class-visual-composer-multilanguage-deactivator.php';
-	Visual_Composer_Multilanguage_Deactivator::deactivate();
+	require_once plugin_dir_path(__FILE__) . 'includes/class-wpbakery-page-builder-multilanguage-deactivator.php';
+	Wpbakery_Page_Builder_Multilanguage_Deactivator::deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_visual_composer_multilanguage');
-register_deactivation_hook(__FILE__, 'deactivate_visual_composer_multilanguage');
+register_activation_hook(__FILE__, 'activate_wpbakery_page_builder_multilanguage');
+register_deactivation_hook(__FILE__, 'deactivate_wpbakery_page_builder_multilanguage');
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path(__FILE__) . 'includes/class-visual-composer-multilanguage.php';
+require plugin_dir_path(__FILE__) . 'includes/class-wpbakery-page-builder-multilanguage.php';
 
 /**
  * Begins execution of the plugin.
@@ -68,10 +68,10 @@ require plugin_dir_path(__FILE__) . 'includes/class-visual-composer-multilanguag
  *
  * @since    1.0.0
  */
-function run_visual_composer_multilanguage()
+function run_wpbakery_page_builder_multilanguage()
 {
 
-	$plugin = new Visual_Composer_Multilanguage();
+	$plugin = new Wpbakery_Page_Builder_Multilanguage();
 	$plugin->run();
 }
-run_visual_composer_multilanguage();
+run_wpbakery_page_builder_multilanguage();

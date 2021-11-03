@@ -9,8 +9,8 @@
  * @link       https://allurewebsolutions.com
  * @since      1.0.0
  *
- * @package    Visual_Composer_Multilanguage
- * @subpackage Visual_Composer_Multilanguage/includes
+ * @package    Wpbakery_Page_Builder_Multilanguage
+ * @subpackage Wpbakery_Page_Builder_Multilanguage/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Visual_Composer_Multilanguage
- * @subpackage Visual_Composer_Multilanguage/includes
+ * @package    Wpbakery_Page_Builder_Multilanguage
+ * @subpackage Wpbakery_Page_Builder_Multilanguage/includes
  * @author     Allure Web Solutions <info@allurewebsolutions.com>
  */
-class Visual_Composer_Multilanguage_i18n {
+class Wpbakery_Page_Builder_Multilanguage_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Visual_Composer_Multilanguage_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'visual-composer-multilanguage',
+			'wpbakery-page-builder-multilanguage',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

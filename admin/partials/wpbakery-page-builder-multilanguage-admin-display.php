@@ -8,8 +8,8 @@
  * @link       https://allurewebsolutions.com
  * @since      1.0.0
  *
- * @package    Visual_Composer_Multilanguage
- * @subpackage Visual_Composer_Multilanguage/admin/partials
+ * @package    Wpbakery_Page_Builder_Multilanguage
+ * @subpackage Wpbakery_Page_Builder_Multilanguage/admin/partials
  */
 ?>
 
