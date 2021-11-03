@@ -17,7 +17,7 @@ In version 2.0, we've added support for automatic translations using the Google 
 
 [Full Setup Instructions & Walkthrough](https://allurewebsolutions.com/wpbakery-page-builder-multilanguage-plugin)
 
-[Demo](https://wpb-multilanguage.allureprojects.com)
+[Demo](https://vc-multilanguage.allureprojects.com)
 
 ## Installation
 

@@ -1,7 +1,7 @@
 === WP Bakery Multilanguage ===
 Contributors: allurewebsolutions
 Author URI: https://allurewebsolutions.com
-Plugin URI: https://wpb-multilanguage.allureprojects.com/
+Plugin URI: https://vc-multilanguage.allureprojects.com/
 Tags: wpbakery page builder, multilanguage, multi-language, translate, translation
 Donate link: https://allurewebsolutions.com/product/donation
 Tested up to: 5.8
@@ -16,7 +16,7 @@ In version 2.0, we've added support for automatic translations using the Google 
 
 [Full Setup Instructions & Walkthrough](https://allurewebsolutions.com/wpbakery-page-builder-multilanguage-plugin)
 
-[Demo](https://wpb-multilanguage.allureprojects.com)
+[Demo](https://vc-multilanguage.allureprojects.com)
 
 == Installation ==
 1) Activate the plugin. Must have WPBakery Page Builder also activated.
