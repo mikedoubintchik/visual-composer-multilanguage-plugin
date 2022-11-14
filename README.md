@@ -35,6 +35,7 @@ In version 2.0, we've added support for automatic translations using the Google 
 
 ## Changelog
 
+2.1.3: Added WordPress 6.1 Support
 2.1: Added default language setting
 2.0: Add automatic translation functionality
 1.0.1: Update readme and screenshots
